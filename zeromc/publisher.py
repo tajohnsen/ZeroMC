@@ -48,7 +48,7 @@ class Publisher(object):
 def run_publisher():
     import os
     publisher = Publisher('tcp', '*', 5678)
-    publisher.file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, 'tests'))
+    publisher.file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'tests'))
     publisher.run()
 
 

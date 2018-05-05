@@ -9,5 +9,6 @@ setup(
     author='Tim Johnsen',
     author_email='timothyjohnsen@outlook.com',
     description='0MQ PUB/SUB system where subscribers receive images and display them fullscreen.',
-    install_requires=['pyzmq', 'pygame']
+    install_requires=['pyzmq', 'pygame'],
+    include_package_data=True
 )
