@@ -1,5 +1,4 @@
-import display
-import publisher
+from zeromc import publisher, display
 import unittest
 import threading
 import tempfile

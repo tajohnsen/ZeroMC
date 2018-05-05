@@ -26,9 +26,7 @@ class Publisher(object):
     def publish(self):
         import os
         self._verify_settings()
-        print(os.path.abspath(self.file_path))
         for directory, _, files in os.walk(os.path.abspath(self.file_path)):
-            print("going through files")
             if not self.running:
                 break
             for file in files:
@@ -37,7 +35,6 @@ class Publisher(object):
                 if 'jpg' in file.lower():
                     print('sending {}'.format(file))
                     with open(os.path.join(self.file_path, directory, file), 'rb') as image_file:
-                        print(os.path.join(self.file_path, directory, file))
                         self.socket.send_multipart([self.name, b'', image_file.read()])
 
     def run(self):
@@ -48,7 +45,12 @@ class Publisher(object):
             time.sleep(self.timeout)
 
 
-if __name__ == '__main__':
+def run_publisher():
+    import os
     publisher = Publisher('tcp', '*', 5678)
-    publisher.file_path = 'tests'
+    publisher.file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, 'tests'))
     publisher.run()
+
+
+if __name__ == '__main__':
+    run_publisher()

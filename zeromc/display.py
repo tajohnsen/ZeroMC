@@ -85,8 +85,6 @@ class Display(object):
         while True:
             # find .jpg files in directory
             pic_list = glob.glob(self.file_path + '*.jpg') + glob.glob(self.file_path + '*.JPG')
-            print(self.file_path)
-            print(pic_list)
             num_pics = len(pic_list)
 
             for num in range(0, num_pics):
@@ -197,6 +195,10 @@ class Display(object):
             self.receive_image()
 
 
-if __name__ == '__main__':
+def run_display():
     display = Display('tcp', 'localhost', 5678)
     display.run()
+
+
+if __name__ == '__main__':
+    run_display()

@@ -21,26 +21,31 @@ Files will be published every 15 seconds though in production this should be muc
 Future development should add a command to allow the publisher to instruct subscribers to erase all old images.
 
 ## How to try it
-Download the repository and install pyzmq and pygame:
+Download the repository and install it using
 ```
-pip install pyzmq
-pip install pygame
+python setup.py install
 ```
 
 First run the publisher:
 ```
-python publisher.py
+python -m zeromc.publisher
 ```
 
 Next run the display (subscriber):
 ```
-python display.py
+python -m zeromc.display
 ```
 
-Your screen will be overtaken by a test image which is giant letters: JPG.
+It may take about 30 seconds but your screen will be overtaken by a test image which is giant letters: JPG.
 * To change from fullscreen to a windowed display, press n.
 * To change back to fullscreen, press f.
 * To exit the display press ESCAPE.
 
 You can add more JPG images to the `tests` directory to send to the display.
 You do not need to restart either component to do so.
+
+## Uninstall
+To uninstall type:
+```
+pip uninstall zeromc
+```
