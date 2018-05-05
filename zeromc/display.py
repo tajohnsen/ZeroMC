@@ -26,9 +26,9 @@ class Display(object):
         import tempfile
         import os
         if isinstance(self._file_path, tempfile.TemporaryDirectory):
-            return os.path.abspath(self._file_path.name) + '\\'
+            return os.path.abspath(self._file_path.name) + os.sep
         else:
-            return os.path.abspath(self._file_path) + '\\'
+            return os.path.abspath(self._file_path) + os.sep
 
     @file_path.setter
     def file_path(self, value):

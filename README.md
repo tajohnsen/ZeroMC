@@ -22,18 +22,41 @@ Future development should add a command to allow the publisher to instruct subsc
 
 ## How to try it
 Download the repository and install it using
+
 ```
-python setup.py install
+Linux:
+python setup.py sdist
+pip3 install --user dist/ZeroMC-0.1.tar.gz
+```
+
+```
+Windows:
+python.exe setup.py sdist
+pip install dist/ZeroMC-0.1.tar.gz
 ```
 
 First run the publisher:
+
 ```
-python -m zeromc.publisher
+Linux:
+python3 -m zeromc.publisher
+```
+
+```
+Windows:
+python.exe -m zeromc.publisher
 ```
 
 Next run the display (subscriber):
+
 ```
-python -m zeromc.display
+Linux:
+python3 -m zeromc.display
+```
+
+```
+Windows:
+python.exe -m zeromc.display
 ```
 
 It may take about 30 seconds but your screen will be overtaken by a test image which is giant letters: JPG.
@@ -47,5 +70,11 @@ You do not need to restart either component to do so.
 ## Uninstall
 To uninstall type:
 ```
+Linux:
+pip3 uninstall zeromc
+```
+
+```
+Windows:
 pip uninstall zeromc
 ```
